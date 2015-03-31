@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "io.js"
+  - "0.12"
+  - "0.10"
+  - "0.8"
+
+before_script:
+  - npm install -g grunt-cli
+  - rm -rf node_modules
+  - npm install
+
+script: grunt -v
