@@ -12,3 +12,4 @@ Generate a fantastic My Little Pony name, perfect for code name!
 ## Installation
 
   $ sudo npm install -g mlp-name-generator
+
