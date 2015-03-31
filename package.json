@@ -1,8 +1,9 @@
 {
   "name": "mlp-name-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate a fantastic My Little Pony name!",
   "main": "./lib/index",
+  "bin": "./bin/mlp-name-generator",
   "scripts": {
     "test": "grunt nodeunit"
   },
