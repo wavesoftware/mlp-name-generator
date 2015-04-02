@@ -40,16 +40,16 @@ describe("Generator", function () {
     });
 
     describe("with seed 'I love you!'", function() {
-      it("returns 'CreamWind'", function() {
+      it("returns 'LimeMagic'", function() {
         generator.setSeed('I love you!');
-        expect(generator.generate()).toEqual('CreamWind');
+        expect(generator.generate()).toEqual('LimeMagic');
       });
     });
 
     describe("with seed 'I heart you!'", function() {
-      it("returns 'CottonDrop'", function() {
+      it("returns 'MagentaBurst'", function() {
         generator.setSeed('I heart you!');
-        expect(generator.generate()).toEqual('CottonDrop');
+        expect(generator.generate()).toEqual('MagentaBurst');
       });
     });
 

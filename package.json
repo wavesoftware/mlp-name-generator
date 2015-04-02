@@ -19,14 +19,15 @@
     "Generator"
   ],
   "dependencies": {
-    "crc": "^3.2.1",
-    "optimist": "~0.6.0",
-    "random-js": "^1.0.4"
+    "crc": "3.2.x",
+    "optimist": "0.6.x",
+    "random-js": "1.0.x",
+    "sha1": "1.1.x"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-jasmine-node-coverage": "^0.4.1"
+    "grunt": "0.4.x",
+    "grunt-contrib-jshint": "0.11.x",
+    "grunt-jasmine-node-coverage": "0.4.x"
   },
   "engines": {
     "node": ">=0.9 <=0.12",
