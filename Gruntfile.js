@@ -36,18 +36,21 @@ module.exports = function(grunt) {
     },
     jasmine_node: {
       options: {
+        coverage: {},
         forceExit: true,
         match: '.',
         matchall: false,
         extensions: 'js',
+        captureExceptions: true,
+        showColors: true,
         specNameMatcher: 'spec'
       },
-      all: ['spec/']
+      src: ['**/*.js']
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-jasmine-node');
+  grunt.loadNpmTasks('grunt-jasmine-node-coverage');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'jasmine_node']);

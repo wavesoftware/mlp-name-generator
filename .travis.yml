@@ -9,4 +9,4 @@ before_script:
   - rm -rf node_modules
   - npm install
 
-script: grunt -v
+script: grunt
