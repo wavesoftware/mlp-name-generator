@@ -6,7 +6,20 @@ describe("CLI", function () {
     cli = require('../lib/cli');
   });
 
-  it('should run', function() {
-    expect(function() { cli.run(); }).not.toThrow();
+  describe('should run', function() {
+    it('without stdin', function() {
+      var argv = {
+        stdin: false, s: false,
+        num: 1, n: 1
+      };
+      expect(function() { cli.run(argv); }).not.toThrow();
+    });
+    it('with stdin', function() {
+      var argv = {
+        stdin: true, s: true,
+        num: 2, n: 2
+      };
+      expect(function() { cli.run(argv); }).not.toThrow();
+    });
   });
 });
