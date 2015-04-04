@@ -3,9 +3,6 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    nodeunit: {
-      files: ['test/**/*_test.js'],
-    },
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -27,12 +24,18 @@ module.exports = function(grunt) {
       },
       lib: {
         files: '<%= jshint.lib.src %>',
-        tasks: ['jshint:lib', 'nodeunit']
+        tasks: ['jshint:lib', 'jasmine_node']
       },
       test: {
         files: '<%= jshint.test.src %>',
-        tasks: ['jshint:test', 'nodeunit']
+        tasks: ['jshint:test', 'jasmine_node']
       },
+    },
+    coveralls: {
+      options: {},
+      default: {
+        src: 'coverage/lcov.info'
+      }
     },
     jasmine_node: {
       options: {
@@ -50,9 +53,12 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jasmine-node-coverage');
+  grunt.loadNpmTasks('grunt-coveralls');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'jasmine_node']);
+  grunt.registerTask('default', ['test']);
+  grunt.registerTask('test', ['jshint', 'jasmine_node']);
 
 };
