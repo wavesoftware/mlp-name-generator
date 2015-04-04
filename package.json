@@ -20,13 +20,15 @@
   ],
   "dependencies": {
     "crc": "3.2.x",
-    "optimist": "0.6.x",
     "random-js": "1.0.x",
-    "sha1": "1.1.x"
+    "sha1": "1.1.x",
+    "yargs": "3.6.x"
   },
   "devDependencies": {
     "grunt": "0.4.x",
     "grunt-contrib-jshint": "0.11.x",
+    "grunt-contrib-watch": "0.6.x",
+    "grunt-coveralls": "1.0.x",
     "grunt-jasmine-node-coverage": "0.4.x"
   },
   "engines": {
