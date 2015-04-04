@@ -3,9 +3,6 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    nodeunit: {
-      files: ['test/**/*_test.js'],
-    },
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -34,6 +31,12 @@ module.exports = function(grunt) {
         tasks: ['jshint:test', 'jasmine_node']
       },
     },
+    coveralls: {
+      options: {},
+      default: {
+        src: 'coverage/lcov.info'
+      }
+    },
     jasmine_node: {
       options: {
         coverage: {},
@@ -46,18 +49,7 @@ module.exports = function(grunt) {
         specNameMatcher: 'spec'
       },
       src: ['**/*.js']
-    },
-    coveralls: {
-      options: {
-        // LCOV coverage file relevant to every target
-        src: 'coverage/lcov.info',
-
-        // When true, grunt-coveralls will only print a warning rather than
-        // an error, to prevent CI builds from failing unnecessarily (e.g. if
-        // coveralls.io is down). Optional, defaults to false.
-        force: false
-      }
-    },
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -66,6 +58,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-coveralls');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'jasmine_node']);
+  grunt.registerTask('default', ['test']);
+  grunt.registerTask('test', ['jshint', 'jasmine_node']);
 
 };
