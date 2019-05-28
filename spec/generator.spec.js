@@ -4,7 +4,7 @@ describe("Generator", function () {
   var generator;
   var first;
   beforeEach(function (){
-    var Generator = require('../lib/generator');
+    const Generator = require('../lib/generator');
     generator = new Generator();
     first = generator.generate();
   });
@@ -40,16 +40,16 @@ describe("Generator", function () {
     });
 
     describe("with seed 'I love you!'", function() {
-      it("returns 'LimeMagic'", function() {
+      it("returns 'AquaCandy'", function() {
         generator.setSeed('I love you!');
-        expect(generator.generate()).toEqual('LimeMagic');
+        expect(generator.generate()).toEqual('AquaCandy');
       });
     });
 
     describe("with seed 'I heart you!'", function() {
-      it("returns 'MagentaBurst'", function() {
+      it("returns 'ScarletMoon'", function() {
         generator.setSeed('I heart you!');
-        expect(generator.generate()).toEqual('MagentaBurst');
+        expect(generator.generate()).toEqual('ScarletMoon');
       });
     });
 
